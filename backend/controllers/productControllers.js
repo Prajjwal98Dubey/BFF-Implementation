@@ -1,18 +1,9 @@
 const Product = require('../models/ProductModal')
 
-const getAllProducts = async (req, res) => {
-    // web needs all info whereas mobile needs "name,price,brand,image"
-    let user = req.user
+const getAllProducts = async () => {
     try {
-        if (user === 'web') {
-            const allProducts = await Product.find()
-            res.status(201).json(allProducts)
-        }
-        else {
-            const allProducts = await Product.find().select("-description -category -createdAt -ratings")
-            res.status(201).json(allProducts)
-        }
-
+        const allProducts = await Product.find()
+        return allProducts
     }
     catch (err) {
         console.log(err)

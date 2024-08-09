@@ -1,0 +1,6 @@
+BFF (backend for frontend)
+It is the layer b/w the client and the server
+
+so the client will call the API exposed for the bff then bff will interact with the serve which will interact with db and send the info to the bff layer
+
+bff layer will do the filtering and send the response according to the type of client.
